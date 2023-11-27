@@ -9,7 +9,7 @@ class auth extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'required');
         if ($this->form_validation->run() == false)
         {
-            $this->load->view('formm_login');
+            $this->load->view('form_login');
         }
         else
         {

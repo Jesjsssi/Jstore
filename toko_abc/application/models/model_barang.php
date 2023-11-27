@@ -2,8 +2,9 @@
 
 class model_barang extends CI_Model {
 
+
     public function tampil_data(){
-        return $this->db->get('katalog_barang');
+        return $this->db->get('tb_barang'); //katalog_barang
     }
 
     public function tambah_barang($data, $table){
@@ -36,7 +37,7 @@ class model_barang extends CI_Model {
         {
             return array();
         }
-                            
+
     }
 }
 ?>

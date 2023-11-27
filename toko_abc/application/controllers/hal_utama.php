@@ -16,19 +16,19 @@ class hal_utama extends CI_Controller {
 
 	public function aksi_login()
 	{
-		$user = $this->input->post('username');
-		$pass = md5($this->input->post('password'));
+		$username = $this->input->post('username');
+		$password = md5($this->input->post('password'));
 
 		$dataPenunjuk = array(
-			'user' => $user,
-			'pass' => $pass
+			'username' => $username, //user
+			'password' => $password //pass
 		);
 
-		$cek = count($this->modelku->getData_khusus("duser", $dataPenunjuk));
+		$cek = count($this->modelku->getData_khusus("tb_user", $dataPenunjuk));//duser
 
 		if($cek > 0){
 			$data_session = array(
-				'nama' => $user,
+				'nama' => $username,
 				'status' => "login"
 			);
 			$this->session->set_userdata($data_session);
@@ -37,7 +37,7 @@ class hal_utama extends CI_Controller {
 		}else{
 			redirect(base_url());
 		}
-		
+
 	}
 	public function daftar(){
 		$this->load->view("form_daftar");
@@ -45,11 +45,11 @@ class hal_utama extends CI_Controller {
 
 	public function aksi_daftar(){
 		$dataInputan = array(
-			'user' => $this->input->post('username'),
-			'pass' => md5($this->input->post('password'))
+			'username' => $this->input->post('username'),
+			'password' => md5($this->input->post('password'))
 		);
 
-		$this->modelku->masukkan('duser', $dataInputan);
+		$this->modelku->masukkan('tb_user', $dataInputan);//duser
 		redirect(base_url(), 'refresh');
 	}
 

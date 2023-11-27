@@ -26,7 +26,7 @@
                 </div>
             </form>
             <!-- Navbar-->
-            
+
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
@@ -65,7 +65,7 @@
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                                
+
                             </div>
                         </div>
                          <!-- Content Row -->
